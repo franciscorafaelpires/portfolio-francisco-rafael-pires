@@ -5,21 +5,21 @@ body {
   line-height: 1.6;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; 
-  margin: 0; 
+  min-height: 100vh;
+  margin: 0;
 }
 
 .container {
-  max-width: 100vw;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
 }
 
 header {
-  background-color: #223540; 
-  padding: 1rem;
-  text-align: center;
+  background-color: #223540;
+  padding: 2rem 1rem;
 }
 
 header img {
@@ -31,67 +31,158 @@ header img {
 }
 
 main {
-  flex: 1; 
+  flex: 1;
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  padding: 2rem;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
 }
 
-.certificacoes > ul {
-  list-style: none;
+.certificacoes ul {
+  list-style-type: none;
 }
 
-.competencias > ul {
-  list-style: none;
+/* Estilos para Competências */
+.competencias ul {
+  display: flex; /* Usar flexbox para alinhar as imagens em linha */
+  flex-wrap: wrap; /* Permitir que as imagens se movam para a próxima linha se não houver espaço suficiente */
+  justify-content: center; /* Centralizar as imagens */
+  align-items: center; /* Alinhar verticalmente */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
+
+.competencias li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 10px; /* Adiciona espaçamento entre as imagens */
+}
+
+.competencias li img {
+  width: 50px; /* Ajuste o tamanho da imagem conforme necessário */
+  height: 50px; /* Ajuste o tamanho da imagem conforme necessário */
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.competencias li img:hover {
+  transform: scale(1.2); /* Efeito de zoom ao passar o mouse */
+}
+
+/* Seções */
 section {
   margin-bottom: 2rem;
   border-left: 2px solid #39ff14;
   padding-left: 1rem;
+  width: 100%;
 }
 
+.projeto .tecnologias ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.projeto .tecnologias ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.projeto .tecnologias ul li img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 5px;
+  transition: transform 0.3s ease;
+}
+
+.projeto .tecnologias ul li img:hover {
+  transform: scale(1.1);
+}
+
+/* Títulos */
 h1, h2, h3 {
   color: #39ff14;
 }
 
+/* Links */
 a {
   color: #39ff14;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
   text-decoration: underline;
+  color: #7cff5c;
 }
 
+.soft-skills  ul {
+  list-style-type: none;
+}
+
+/* Footer */
 footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #223540; 
+  background-color: #223540;
   padding: 2rem;
-  color: #39ff14;
-  bottom: 0;
-  width: 100vw;
+  text-align: center;
+  width: 100%;
 }
 
 footer ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 2rem;
 }
 
-footer li {
-  align-items: center;
-  margin: 0 1rem;
-}
-
-footer a > img {
-  width: 4.5em;
-  height: 4em;
+footer li a img {
+  width: 50px;
+  height: 50px;
   object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+footer li a img:hover {
+  transform: scale(1.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+      padding: 0.5rem;
+  }
+
+  header img {
+      width: 150px;
+      height: 150px;
+  }
+
+  .competencias li img {
+      width: 40px; /* Ajuste para telas menores */
+      height: 40px; /* Ajuste para telas menores */
+  }
+
+  footer ul {
+      gap: 1rem;
+  }
+
+  footer li a img {
+      width: 40px;
+      height: 40px;
+  }
 }
